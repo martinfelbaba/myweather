@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## MyWeather application
+
+MyWeather app is react training application.
+
+Everyone has friends or family around the country or the world. Wouldn’t it be great to have a way to quickly check current and forecasted weather for different locations around the world?
+
+There are existing sites that offer this feature, but they are heavy-weight and slow. So, let’s develop something custom.
+
 ## Available Scripts
 
 In the project directory, you can run:
