@@ -1,0 +1,27 @@
+.Title {
+  text-align: left;
+  font-size: large;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.AddCityForm {
+  text-align: right;
+}
+
+.App {
+  text-align: left;
+}
+
+.App-header {
+  background-color: #011338;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-left: calc(10px + 2vmin);
+  padding-top: calc(10px + 2vmin);
+}
