@@ -1,8 +1,16 @@
-.Title {
+.title {
   text-align: left;
-  font-size: large;
+  font-size: x-large;
   font-style: italic;
   font-weight: bold;
+}
+
+.container {
+  background-color: #011338;
+  color: white;
+  padding-left: calc(10px + 2vmin);
+  padding-top: calc(10px + 2vmin);
+  min-height: 100vh;
 }
 
 .AddCityForm {
