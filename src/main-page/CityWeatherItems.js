@@ -10,11 +10,11 @@ function CityWeatherItems(props) {
     const entries = props.entries;
 
     return (
-      <div className="cityWaeterItems">
+      <div className="city-weather-items">
         {entries.map(({ id, name, main}) => {
           return (
             <div
-              className="cityWeaterItem" 
+              className="city-weather-item" 
               key={id}
             >
               <div className="subtitle">Weather Summary</div>

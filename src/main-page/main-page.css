@@ -11,17 +11,24 @@
   padding-bottom: calc(1px + 2vmin);
 }
 
-.addCityForm {
+.add-city-form {
   font-size: small;
   justify-content: right;
 }
 
-.cityWeaterItem {
+.city-weather-item {
   background-color: #20242c;
   color: white;
   border: black 2px solid;
   padding: 10px;
   margin: 3px;
+  box-sizing: border-box;
+  width: 25%;
+}
+
+.city-weather-item {
+  display: inline-block;
+  flex-direction: block;
 }
 
 .title {
@@ -29,17 +36,4 @@
   font-size: x-large;
   font-style: italic;
   font-weight: bold;
-}
-
-.App-header {
-  background-color: #011338;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  justify-content: top;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding-left: calc(10px + 2vmin);
-  padding-top: calc(10px + 2vmin);
 }

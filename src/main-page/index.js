@@ -11,22 +11,28 @@ function Title() {
 }
 
 function App() {
-  const [cityWeaterList, setCityWeaterList] = useState([
-    {
-      name: "Bratislava",
-      main: { temp: 283.75, temp_min: 282.04, temp_max: 285.99, humidity: 69 },
-      id: 1,
-    },
-    {
-      name: "London",
-      main: { temp: 298.48, temp_min: 297.56, temp_max: 300.05, humidity: 64 },
-      id: 2,
-    },
-  ]);
+  const [cityWeaterList, setCityWeaterList] = useState([]);
 
   const addCity = (userInput) => {
-    const newCity = { name: userInput, id: Date.now() };
-    setCityWeaterList((cityWeaterList) => [newCity, ...cityWeaterList]);
+    const latLongUrl = "http://api.openweathermap.org/geo/1.0/direct?q="
+      + userInput + "&limit=1&appid=eb8a9a8188be96352234aefbadbf5ab2";
+    fetch(latLongUrl)
+      .then(response => response.json())
+      .then(data => {
+        console.log("Url: " + latLongUrl)
+        console.log("http://api.openweathermap.org: " +  userInput + ", lon: "+ data[0].lon + ", lat: " + data[0].lat);
+        if(data[0].lat !== undefined) {
+          const cityWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat="
+            + data[0].lat  + "&lon=" + data[0].lon  + "&appid=eb8a9a8188be96352234aefbadbf5ab2";
+          fetch(cityWeatherUrl)
+            .then(response => response.json())
+            .then(data => {
+              console.log("Url: " + cityWeatherUrl)
+              console.log("http://api.openweathermap.org city: " + data.name);
+              setCityWeaterList((cityWeaterList) => [data, ...cityWeaterList]);
+            });
+        }
+      });
   };
 
   return (
@@ -36,7 +42,7 @@ function App() {
           <Title />
         </Col>
         <Col></Col>
-        <Col className="addCityForm">
+        <Col className="add-city-form">
           <AddCityForm addCity={addCity}></AddCityForm>
         </Col>
       </Row>
