@@ -20,8 +20,8 @@ function CityWeatherItems(props) {
               <div className="subtitle">Weather Summary</div>
               <div className="city-name">{name}</div>
               <div className="temperature">{toCelsius(main?.temp)}</div>
-              <div className="temperature-ma`">Min: {toCelsius(main?.temp_min)}</div>
-              <div className="temperature-min">Max: {toCelsius(main?.temp_max)}</div>
+              <div className="temperature-max">Low: {toCelsius(main?.temp_min)}</div>
+              <div className="temperature-min">High: {toCelsius(main?.temp_max)}</div>
               <div className="humidity">Humidity: {main?.humidity}</div>
             </div>
           );

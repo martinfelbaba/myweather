@@ -13,9 +13,12 @@ function Title() {
 function App() {
   const [cityWeaterList, setCityWeaterList] = useState([]);
 
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  console.log("API_KEY: " + API_KEY);
+
   const addCity = (userInput) => {
     const latLongUrl = "http://api.openweathermap.org/geo/1.0/direct?q="
-      + userInput + "&limit=1&appid=eb8a9a8188be96352234aefbadbf5ab2";
+      + userInput + "&limit=1&appid=" + API_KEY;
     fetch(latLongUrl)
       .then(response => response.json())
       .then(data => {
@@ -23,7 +26,7 @@ function App() {
         console.log("http://api.openweathermap.org: " +  userInput + ", lon: "+ data[0].lon + ", lat: " + data[0].lat);
         if(data[0].lat !== undefined) {
           const cityWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat="
-            + data[0].lat  + "&lon=" + data[0].lon  + "&appid=eb8a9a8188be96352234aefbadbf5ab2";
+            + data[0].lat  + "&lon=" + data[0].lon  + "&appid=" + API_KEY;
           fetch(cityWeatherUrl)
             .then(response => response.json())
             .then(data => {
