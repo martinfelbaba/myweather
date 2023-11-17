@@ -1,24 +1,34 @@
+.main-container {
+  background-color: #011338;
+  color: white;
+  padding-left: calc(10px + 2vmin);
+  padding-right: calc(10px + 2vmin);
+  padding-top: calc(15px + 2vmin);
+  min-height: 100vh;
+}
+
+.app-header {
+  padding-bottom: calc(1px + 2vmin);
+}
+
+.addCityForm {
+  font-size: small;
+  justify-content: right;
+}
+
+.cityWeaterItem {
+  background-color: #20242c;
+  color: white;
+  border: black 2px solid;
+  padding: 10px;
+  margin: 3px;
+}
+
 .title {
   text-align: left;
   font-size: x-large;
   font-style: italic;
   font-weight: bold;
-}
-
-.container {
-  background-color: #011338;
-  color: white;
-  padding-left: calc(10px + 2vmin);
-  padding-top: calc(10px + 2vmin);
-  min-height: 100vh;
-}
-
-.AddCityForm {
-  text-align: right;
-}
-
-.App {
-  text-align: left;
 }
 
 .App-header {

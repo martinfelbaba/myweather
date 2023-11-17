@@ -10,11 +10,11 @@ function CityWeatherItems(props) {
     const entries = props.entries;
 
     return (
-      <ul className="mt-3">
+      <div className="cityWaeterItems">
         {entries.map(({ id, name, main}) => {
           return (
-            <li
-              className="px-2 mt-1 mb-1 ms-2" 
+            <div
+              className="cityWeaterItem" 
               key={id}
             >
               <div className="subtitle">Weather Summary</div>
@@ -23,10 +23,10 @@ function CityWeatherItems(props) {
               <div className="temperature-ma`">Min: {toCelsius(main?.temp_min)}</div>
               <div className="temperature-min">Max: {toCelsius(main?.temp_max)}</div>
               <div className="humidity">Humidity: {main?.humidity}</div>
-            </li>
+            </div>
           );
        })}
-      </ul>
+      </div>
     );
 }
 

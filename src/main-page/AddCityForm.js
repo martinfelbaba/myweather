@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import {FormInputField} from "./FormInputField";
-import {FormSubmitButton} from "./FormSubmitButton";
+import { FormInputField } from "./FormInputField";
+import { FormSubmitButton } from "./FormSubmitButton";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const AddCityForm = ({ addCity }) => {
   const [cityInput, setCityInput] = useState("");
@@ -19,13 +22,9 @@ const AddCityForm = ({ addCity }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-        <div className="col-7">
-          <FormInputField value={cityInput} onChange={handleChange} />
-        </div>
-
-        <div className="col-5">
-          <FormSubmitButton />
-        </div>
+      <FormInputField value={cityInput} onChange={handleChange} />
+      &nbsp;
+      <FormSubmitButton />
     </form>
   );
 };
